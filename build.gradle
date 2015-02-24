@@ -16,6 +16,9 @@ dependencies {
 
 bintray {
 	pkg {
+		websiteUrl = 'https://github.com/boxheed/gradle-java-opinion'
+		issueTrackerUrl = 'https://github.com/boxheed/gradle-java-opinion/issues'
+        vcsUrl = 'https://github.com/boxheed/gradle-java-opinion.git'
 		labels = ['gradle', 'opinion', 'gradle-pater-build-plugin', 'plugin', 'java']
 	}
 }
