@@ -1,8 +1,8 @@
 //External plugins jjjj
 apply plugin: 'com.fizzpod.gitignore'
 apply plugin: 'com.fizzpod.layout'
-/*apply plugin: 'com.fizzpod.info'
-apply plugin: 'com.fizzpod.sweeney'
+apply plugin: 'com.fizzpod.info'
+/*apply plugin: 'com.fizzpod.sweeney'
 
 sweeney {
 	enforce 'jdk:[1.7,)'
