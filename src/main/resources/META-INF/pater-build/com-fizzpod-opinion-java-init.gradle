@@ -1,0 +1,30 @@
+//External plugins jjjj
+apply plugin: 'com.fizzpod.gitignore'
+apply plugin: 'com.fizzpod.layout'
+/*apply plugin: 'com.fizzpod.info'
+apply plugin: 'com.fizzpod.sweeney'
+
+sweeney {
+	enforce 'jdk:[1.7,)'
+	enforce 'gradle:[2.3,)'
+}
+
+layout {
+	file('README.md') {
+		"# " + project.name
+	}
+	file('LICENSE')
+	file('shippable.yml')
+	file('release.gradle')
+}
+
+gitignore {
+	ignore 'build'
+	ignore '.gradle'
+	ignore 'bin'
+  ignore '.vagrant'
+  ignore '.classpath'
+  ignore '.project'
+  ignore '.settings'
+}
+*/
