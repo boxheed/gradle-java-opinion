@@ -1,7 +1,7 @@
-//External plugins jjjj
+//External plugins
 apply plugin: 'com.fizzpod.gitignore'
 apply plugin: 'com.fizzpod.layout'
-/*apply plugin: 'com.fizzpod.info'
+apply plugin: 'com.fizzpod.info'
 apply plugin: 'com.fizzpod.sweeney'
 
 sweeney {
@@ -27,4 +27,3 @@ gitignore {
   ignore '.project'
   ignore '.settings'
 }
-*/
