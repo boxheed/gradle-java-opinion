@@ -1,4 +1,4 @@
-//External plugins jjjj
+//External plugins
 apply plugin: 'com.fizzpod.gitignore'
 apply plugin: 'com.fizzpod.layout'
 apply plugin: 'com.fizzpod.info'
