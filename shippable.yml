@@ -23,6 +23,8 @@ before_script:
   - git remote set-url origin git@github.com:$REPO_NAME.git
   - mkdir $HOME/.gradle; printenv | grep GRADLE_PROP | cut -d'=' -f 2- >> $HOME/.gradle/gradle.properties
 
+ci: pwd
+
 script:
   - ./gradlew clean build; if [ "$HEAD_BRANCH" == "master" ]; then ./gradlew clean verifyRelease createRelease; git push --tags; ./gradlew clean build bintrayUpload; fi
 
