@@ -39,7 +39,7 @@ bintray {
 	dryRun = false
 	publish = true
 	pkg {
-		labels = ['gradle', 'opinion', 'gradle-pater-build-plugin', 'plugin', 'java']
+		labels = ['gradle', 'opinion', 'gradle-pater-build-plugin', 'java']
 		repo = 'maven'
 	}
 }
