@@ -16,6 +16,12 @@ scmVersion {
 group = 'com.fizzpod'
 version = scmVersion.version
 
+project.tasks.findAll {
+	it.name.startsWith("publish")
+}.each {
+	it.dependsOn assemble
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
