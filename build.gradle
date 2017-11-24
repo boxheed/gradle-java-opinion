@@ -22,7 +22,7 @@ repositories {
 
 apply plugin: 'com.fizzpod.pater-build'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-base-java.gradle'
-apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-cobertura.gradle'
+apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-jacoco.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-init.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-publish.gradle'
 apply plugin: 'com.github.nwillc.vplugin'
