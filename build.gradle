@@ -15,6 +15,7 @@ buildscript {
 		classpath 'com.fizzpod:gradle-sweeney-plugin:2.1.2'
 		classpath 'com.fizzpod:gradle-pater-build-plugin:1.1.1'
 		classpath 'gradle.plugin.com.github.nwillc:vplugin:2.1.1'
+		classpath 'io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE'
   }
 }
 
@@ -24,6 +25,7 @@ repositories {
 
 apply plugin: 'com.fizzpod.pater-build'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-base-java.gradle'
+apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-bom.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-jacoco.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-init.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-publish.gradle'
@@ -36,6 +38,7 @@ dependencies {
 		runtime 'com.fizzpod:gradle-gitignore-plugin:1.2.0'
 		runtime 'com.fizzpod:gradle-layout-plugin:2.0.1'
 		runtime 'com.fizzpod:gradle-sweeney-plugin:2.1.2'
+		runtime 'io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE'
 }
 
 bintray {
