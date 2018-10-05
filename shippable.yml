@@ -23,6 +23,7 @@ build:
 #    - if [[ $SHIPPABLE_JDK_VERSION == "oraclejdk8" ]] ; then export JAVA_HOME="/usr/lib/jvm/java-8-oracle"; export PATH="$PATH:/usr/lib/jvm/java-8-oracle/bin"; export java_path="/usr/lib/jvm/java-8-oracle/jre/bin/java"; fi
 #    - update-alternatives --set java $java_path
     - java -version
+    - source <(curl -s https://raw.githubusercontent.com/boxheed/shippable-scripts/master/java-on-success)
 #    - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - mkdir -p shippable/artifacts
@@ -33,7 +34,7 @@ build:
 
   on_success:
     - if [ -d ./build/test-results ]; then mkdir -p shippable/testresults && cp -R ./build/test-results/* ./shippable/testresults; fi
-#    - cp -R ./build/reports/cobertura/*.xml ./shippable/codecoverage
+    #- mkdir -p shippable/codecoverage && cp -R ./build/reports/cobertura/*.xml ./shippable/codecoverage
 #    - cp -R ./build/libs/* ./shippable/artifacts
 
 #environment
