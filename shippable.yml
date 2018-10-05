@@ -23,7 +23,7 @@ build:
 #    - if [[ $SHIPPABLE_JDK_VERSION == "oraclejdk8" ]] ; then export JAVA_HOME="/usr/lib/jvm/java-8-oracle"; export PATH="$PATH:/usr/lib/jvm/java-8-oracle/bin"; export java_path="/usr/lib/jvm/java-8-oracle/jre/bin/java"; fi
 #    - update-alternatives --set java $java_path
     - java -version
-    - mkdir -p shippable/testresults
+#    - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - mkdir -p shippable/artifacts
     - git remote set-url origin git@github.com:$REPO_FULL_NAME.git
@@ -32,7 +32,7 @@ build:
 #     if [ "$BRANCH" == "master" ]; then ./gradlew clean verifyRelease createRelease && git push --tags && ./gradlew clean build bintrayUpload; fi
 
   on_success:
-    - cp -R ./build/test-results/* ./shippable/testresults
+    - mkdir -p shippable/testresults && cp -R ./build/test-results/* ./shippable/testresults
 #    - cp -R ./build/reports/cobertura/*.xml ./shippable/codecoverage
 #    - cp -R ./build/libs/* ./shippable/artifacts
 
