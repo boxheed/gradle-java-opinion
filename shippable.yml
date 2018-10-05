@@ -32,7 +32,7 @@ build:
 #     if [ "$BRANCH" == "master" ]; then ./gradlew clean verifyRelease createRelease && git push --tags && ./gradlew clean build bintrayUpload; fi
 
   on_success:
-    - mkdir -p shippable/testresults && cp -R ./build/test-results/* ./shippable/testresults
+    - mkdir -p shippable/testresults && [ -d ./build/test-results ] && cp -R ./build/test-results/* ./shippable/testresults
 #    - cp -R ./build/reports/cobertura/*.xml ./shippable/codecoverage
 #    - cp -R ./build/libs/* ./shippable/artifacts
 
