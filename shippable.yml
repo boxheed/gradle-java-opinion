@@ -10,30 +10,17 @@ jdk:
 #  - openjdk9
 #  - openjdk10
 
-
-
-# specify the build_image
-#build_image: shippableimages/ubuntu1404_java
-
 build:
   ci:
-#    - if [[ $SHIPPABLE_JDK_VERSION == "openjdk7" ]] ; then export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"; export PATH="$PATH:/usr/lib/jvm/java-7-openjdk-amd64/bin"; export java_path="/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java"; fi
-#    - if [[ $SHIPPABLE_JDK_VERSION == "oraclejdk7" ]] ; then export JAVA_HOME="/usr/lib/jvm/java-7-oracle"; export PATH="$PATH:/usr/lib/jvm/java-7-oracle/bin"; export java_path="/usr/lib/jvm/java-7-oracle/jre/bin/java"; fi
-#    - if [[ $SHIPPABLE_JDK_VERSION == "openjdk6" ]] ; then export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64"; export PATH="$PATH:/usr/lib/jvm/java-6-openjdk-amd64/bin"; export java_path="/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java"; fi
-#    - if [[ $SHIPPABLE_JDK_VERSION == "oraclejdk8" ]] ; then export JAVA_HOME="/usr/lib/jvm/java-8-oracle"; export PATH="$PATH:/usr/lib/jvm/java-8-oracle/bin"; export java_path="/usr/lib/jvm/java-8-oracle/jre/bin/java"; fi
-#    - update-alternatives --set java $java_path
     - java -version
-    - source <(curl -s https://raw.githubusercontent.com/boxheed/shippable-scripts/master/java-on-success)
-#    - mkdir -p shippable/testresults
-    - mkdir -p shippable/codecoverage
-    - mkdir -p shippable/artifacts
     - git remote set-url origin git@github.com:$REPO_FULL_NAME.git
     - mkdir $HOME/.gradle; printenv | grep GRADLE_PROP | cut -d'=' -f 2- >> $HOME/.gradle/gradle.properties
     - ./gradlew clean build
 #     if [ "$BRANCH" == "master" ]; then ./gradlew clean verifyRelease createRelease && git push --tags && ./gradlew clean build bintrayUpload; fi
 
   on_success:
-    - if [ -d ./build/test-results ]; then mkdir -p shippable/testresults && cp -R ./build/test-results/* ./shippable/testresults; fi
+    - source <(curl -s https://raw.githubusercontent.com/boxheed/shippable-scripts/master/java-on-success)
+    #- if [ -d ./build/test-results ]; then mkdir -p shippable/testresults && cp -R ./build/test-results/* ./shippable/testresults; fi
     #- mkdir -p shippable/codecoverage && cp -R ./build/reports/cobertura/*.xml ./shippable/codecoverage
 #    - cp -R ./build/libs/* ./shippable/artifacts
 
