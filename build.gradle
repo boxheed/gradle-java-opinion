@@ -7,9 +7,9 @@ buildscript {
         }
 	}
 	dependencies {
-		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
-		classpath 'pl.allegro.tech.build:axion-release-plugin:1.8.1'
-		classpath 'com.fizzpod:gradle-extended-info-plugin:3.6.1'
+		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+		classpath 'pl.allegro.tech.build:axion-release-plugin:1.10.2'
+		classpath 'com.fizzpod:gradle-extended-info-plugin:5.2.0'
 		classpath 'com.fizzpod:gradle-gitignore-plugin:1.2.0'
 		classpath 'com.fizzpod:gradle-layout-plugin:2.0.1'
 		classpath 'com.fizzpod:gradle-sweeney-plugin:2.1.2'
@@ -32,9 +32,9 @@ apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-
 apply plugin: 'com.github.nwillc.vplugin'
 
 dependencies {
-		runtime 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
-		runtime 'pl.allegro.tech.build:axion-release-plugin:1.8.1'
-		runtime 'com.fizzpod:gradle-extended-info-plugin:3.6.1'
+		runtime 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+		runtime 'pl.allegro.tech.build:axion-release-plugin:1.10.2'
+		runtime 'com.fizzpod:gradle-extended-info-plugin:5.2.0'
 		runtime 'com.fizzpod:gradle-gitignore-plugin:1.2.0'
 		runtime 'com.fizzpod:gradle-layout-plugin:2.0.1'
 		runtime 'com.fizzpod:gradle-sweeney-plugin:2.1.2'
