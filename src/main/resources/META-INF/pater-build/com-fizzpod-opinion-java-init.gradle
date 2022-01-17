@@ -6,7 +6,7 @@ apply plugin: 'com.fizzpod.sweeney'
 
 sweeney {
   enforce 'jdk:[1.8,)'
-  enforce 'gradle:[6.2,)'
+  enforce 'gradle:[7.0,)'
 }
 
 layout {
