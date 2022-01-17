@@ -2,41 +2,41 @@ buildscript {
 	repositories {
 		mavenLocal()
 		mavenCentral()
+    	maven {
+      		url "https://artifacts.fizzpod.com/public/mvn/"
+		}
 		maven {
-          url "https://plugins.gradle.org/m2/"
-        }
+			url "https://plugins.gradle.org/m2/"
+		}
 	}
 	dependencies {
-		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-		classpath 'pl.allegro.tech.build:axion-release-plugin:1.10.2'
-		classpath 'com.fizzpod:gradle-extended-info-plugin:5.2.0'
-		classpath 'com.fizzpod:gradle-gitignore-plugin:1.2.0'
-		classpath 'com.fizzpod:gradle-layout-plugin:2.0.1'
-		classpath 'com.fizzpod:gradle-sweeney-plugin:2.1.2'
-		classpath 'com.fizzpod:gradle-pater-build-plugin:1.1.1'
-		classpath 'gradle.plugin.com.github.nwillc:vplugin:2.1.1'
-		classpath 'io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE'
-  }
+		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
+		classpath 'com.fizzpod:gradle-extended-info-plugin:11.2.0'
+		classpath 'com.fizzpod:gradle-gitignore-plugin:2.3.1'
+		classpath 'com.fizzpod:gradle-layout-plugin:4.3.0'
+		classpath 'com.fizzpod:gradle-sweeney-plugin:4.4.0'
+		classpath 'com.fizzpod:gradle-pater-build-plugin:2.4.0'
+		classpath 'com.github.ben-manes:gradle-versions-plugin:0.41.0'
+		classpath 'io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE'
+  	}
 }
 
 repositories {
 	mavenCentral()
 }
 
-apply plugin: 'com.fizzpod.pater-build'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-base-java.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-bom.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-jacoco.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-init.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-publish.gradle'
-apply plugin: 'com.github.nwillc.vplugin'
 
 dependencies {
-		runtime 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-		runtime 'pl.allegro.tech.build:axion-release-plugin:1.10.2'
-		runtime 'com.fizzpod:gradle-extended-info-plugin:5.2.0'
-		runtime 'com.fizzpod:gradle-gitignore-plugin:1.2.0'
-		runtime 'com.fizzpod:gradle-layout-plugin:2.0.1'
-		runtime 'com.fizzpod:gradle-sweeney-plugin:2.1.2'
-		runtime 'io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE'
+	runtimeOnly 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
+	runtimeOnly 'com.fizzpod:gradle-extended-info-plugin:11.2.0'
+	runtimeOnly 'com.fizzpod:gradle-gitignore-plugin:2.3.1'
+	runtimeOnly 'com.fizzpod:gradle-layout-plugin:4.3.0'
+	runtimeOnly 'com.fizzpod:gradle-sweeney-plugin:4.4.0'
+	runtimeOnly 'com.github.ben-manes:gradle-versions-plugin:0.41.0'
+	runtimeOnly 'io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE'
 }
