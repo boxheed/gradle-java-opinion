@@ -16,7 +16,7 @@ buildscript {
         classpath 'com.gradle.enterprise:com.gradle.enterprise.gradle.plugin:3.13'
         classpath 'org.owasp:dependency-check-gradle:8.2.1'
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.14'
-		classpath 'io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE'
+		classpath 'io.spring.gradle:dependency-management-plugin:1.1.0'
     }
 }
 
@@ -47,5 +47,5 @@ dependencies {
     runtimeOnly 'com.gradle.enterprise:com.gradle.enterprise.gradle.plugin:3.13'
     runtimeOnly 'org.owasp:dependency-check-gradle:8.2.1'
     runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.14'
-	runtimeOnly 'io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE'
+	runtimeOnly 'io.spring.gradle:dependency-management-plugin:1.1.0'
 }
