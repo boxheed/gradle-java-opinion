@@ -1,18 +1,50 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
+//Builtin plugins
+apply plugin: 'groovy'
+apply plugin: 'project-report'
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
+//External plugins
+apply plugin: 'com.fizzpod.info'
+apply plugin: 'com.fizzpod.sweeney'
+apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'com.github.spotbugs'
+
+//build scan is configured in the settings.gradle file
+buildScan {
+  termsOfServiceUrl = 'https://gradle.com/terms-of-service'    
+  termsOfServiceAgree = 'yes'                                  
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
+//sourceCompatibility=1.8
+//targetCompatibility=1.8
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
 }
 
-artifacts {
-    archives sourcesJar
-    archives javadocJar
+compileJava {
+    options.release = 8
 }
 
+compileGroovy {
+    options.release = 8
+}
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+sweeney {
+	enforce 'jdk:[1.8,)'
+	enforce 'gradle:[7.0.0,)'
+}
+
+
+spotbugs {
+    ignoreFailures = true
+    showStackTraces = true
+    showProgress = true
+    reportsDir = file("$buildDir/spotbugs")
+}
