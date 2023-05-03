@@ -1,20 +1,13 @@
 //External plugins
 apply plugin: 'com.fizzpod.gitignore'
 apply plugin: 'com.fizzpod.layout'
-apply plugin: 'com.fizzpod.info'
-apply plugin: 'com.fizzpod.sweeney'
-
-sweeney {
-  enforce 'jdk:[1.8,)'
-  enforce 'gradle:[7.0,)'
-}
 
 layout {
   file('README.md') {
     "# " + project.name
   }
   file('LICENSE')
-  file('release.gradle')
+  file('.circleci/config.yml')
 }
 
 gitignore {
@@ -25,4 +18,5 @@ gitignore {
   ignore '.classpath'
   ignore '.project'
   ignore '.settings'
+  ignore '.vscode'
 }

@@ -4,7 +4,9 @@ apply plugin: 'maven-publish'
 
 //External plugins
 apply plugin: 'pl.allegro.tech.build.axion-release'
-apply plugin: 'com.github.ben-manes.versions'
+
+//owasp checking
+apply plugin: 'org.owasp.dependencycheck'
 
 scmVersion {
     tag {
@@ -15,24 +17,27 @@ scmVersion {
 group = 'com.fizzpod'
 version = scmVersion.version
 
-project.tasks.findAll {
-	it.name.startsWith("publish")
-}.each {
-	it.dependsOn assemble
+task sourcesJar(type: Jar, dependsOn: classes) {
+    archiveClassifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    archiveClassifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
 }
 
 publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            artifact sourcesJar
-            artifact javadocJar
-        }
-    }
 
     repositories {
         maven {
-            url "s3://artifacts.fizzpod.com/public/mvn"
+            url project.hasProperty("mvn_repo_url")? mvn_access_key: "";
             credentials(AwsCredentials) {
                 accessKey = project.hasProperty("mvn_access_key")? mvn_access_key: "";
                 secretKey = project.hasProperty("mvn_secret_key")? mvn_secret_key: "";
@@ -40,3 +45,16 @@ publishing {
         }
     }
 }
+
+dependencyCheck {
+  //don't fail the build on CVSS scores, this should be updated to '4' once all builds are clean
+  failBuildOnCVSS=11
+  analyzers {
+    assemblyEnabled=false
+  }
+  suppressionFiles=["cve-suppressions.xml"]
+  skipConfigurations=["spotbugs"]
+}
+
+//Set up the release verification to depend on owasp analysis
+verifyRelease.dependsOn dependencyCheckAnalyze

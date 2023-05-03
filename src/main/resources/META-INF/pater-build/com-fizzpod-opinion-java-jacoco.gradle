@@ -1,14 +1,15 @@
+//External plugins
 apply plugin: 'jacoco'
 
 
 jacoco {
-    toolVersion = "0.7.9"
+    toolVersion = "0.8.6"
 }
 
 jacocoTestReport {
     reports {
-        xml.enabled true
-        csv.enabled false
+        xml.required = true
+        csv.required = false
     }
 }
 

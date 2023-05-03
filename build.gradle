@@ -1,29 +1,26 @@
 buildscript {
-	repositories {
-		mavenLocal()
-		mavenCentral()
-    	maven {
-      		url "https://artifacts.fizzpod.com/public/mvn/"
-		}
-		maven {
-			url "https://plugins.gradle.org/m2/"
-		}
-	}
-	dependencies {
-		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
-		classpath 'com.fizzpod:gradle-extended-info-plugin:11.2.0'
-		classpath 'com.fizzpod:gradle-gitignore-plugin:2.3.1'
-		classpath 'com.fizzpod:gradle-layout-plugin:4.3.0'
-		classpath 'com.fizzpod:gradle-sweeney-plugin:4.4.0'
-		classpath 'com.fizzpod:gradle-pater-build-plugin:2.4.0'
-		classpath 'com.github.ben-manes:gradle-versions-plugin:0.41.0'
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'pl.allegro.tech.build:axion-release-plugin:1.15.0'
+        classpath 'com.fizzpod:gradle-extended-info-plugin:12.2.2'
+        classpath 'com.fizzpod:gradle-gitignore-plugin:2.5.2'
+        classpath 'com.fizzpod:gradle-layout-plugin:4.3.0'
+        classpath 'com.fizzpod:gradle-sweeney-plugin:4.6.0'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.46.0'
+        classpath 'com.gradle.enterprise:com.gradle.enterprise.gradle.plugin:3.13'
+        classpath 'org.owasp:dependency-check-gradle:8.2.1'
+        classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.14'
 		classpath 'io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE'
-  	}
+    }
 }
 
-repositories {
-	mavenCentral()
-}
+apply plugin: 'java'
 
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-base-java.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-bom.gradle'
@@ -31,12 +28,24 @@ apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-init.gradle'
 apply from: './src/main/resources/META-INF/pater-build/com-fizzpod-opinion-java-publish.gradle'
 
+compileJava {
+    options.release = 11
+}
+
+compileGroovy {
+    options.release = 11
+}
+
 dependencies {
-	runtimeOnly 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
-	runtimeOnly 'com.fizzpod:gradle-extended-info-plugin:11.2.0'
-	runtimeOnly 'com.fizzpod:gradle-gitignore-plugin:2.3.1'
-	runtimeOnly 'com.fizzpod:gradle-layout-plugin:4.3.0'
-	runtimeOnly 'com.fizzpod:gradle-sweeney-plugin:4.4.0'
-	runtimeOnly 'com.github.ben-manes:gradle-versions-plugin:0.41.0'
+    runtimeOnly 'pl.allegro.tech.build:axion-release-plugin:1.15.0'
+    runtimeOnly 'com.fizzpod:gradle-extended-info-plugin:12.2.2'
+    runtimeOnly 'com.fizzpod:gradle-gitignore-plugin:2.5.2'
+    runtimeOnly 'com.fizzpod:gradle-layout-plugin:4.3.0'
+    runtimeOnly 'com.fizzpod:gradle-sweeney-plugin:4.6.0'
+    runtimeOnly 'com.fizzpod:gradle-pater-build-plugin:2.5.1'
+    runtimeOnly 'com.github.ben-manes:gradle-versions-plugin:0.46.0'
+    runtimeOnly 'com.gradle.enterprise:com.gradle.enterprise.gradle.plugin:3.13'
+    runtimeOnly 'org.owasp:dependency-check-gradle:8.2.1'
+    runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.14'
 	runtimeOnly 'io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE'
 }
