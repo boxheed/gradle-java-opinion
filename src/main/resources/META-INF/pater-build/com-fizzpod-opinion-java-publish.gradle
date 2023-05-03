@@ -37,7 +37,7 @@ publishing {
 
     repositories {
         maven {
-            url project.hasProperty("mvn_repo_url")? mvn_repo_url: "";
+            url "s3://artifacts.fizzpod.com/public/mvn"
             credentials(AwsCredentials) {
                 accessKey = project.hasProperty("mvn_access_key")? mvn_access_key: "";
                 secretKey = project.hasProperty("mvn_secret_key")? mvn_secret_key: "";
