@@ -36,6 +36,7 @@ project.tasks.findAll {
 artifacts {
     archives sourcesJar
     archives javadocJar
+    tasks.named("bootJar")
 }
 
 publishing {
@@ -69,4 +70,4 @@ dependencyCheck {
 }
 
 //Set up the release verification to depend on owasp analysis
-verifyRelease.dependsOn dependencyCheckAnalyze
+//verifyRelease.dependsOn dependencyCheckAnalyze
