@@ -8,6 +8,8 @@ apply plugin: 'pl.allegro.tech.build.axion-release'
 //owasp checking
 apply plugin: 'org.owasp.dependencycheck'
 
+apply plugin: 'com.fizzpod.github-release'
+
 scmVersion {
     tag {
         prefix = 'release-'
@@ -69,5 +71,18 @@ dependencyCheck {
   skipConfigurations=["spotbugs"]
 }
 
+githubRelease {
+    token project.hasProperty("github_release_token")? github_release_token: ""
+    repo scminfo.origin
+	tagName 'release-' + project.version
+	releaseName 'Release ' + project.version
+    generateReleaseNotes true 
+    draft false 
+	dryRun false
+    releaseAssets { ->
+		jar.outputs.files
+	}
+}
+
 //Set up the release verification to depend on owasp analysis
-//verifyRelease.dependsOn dependencyCheckAnalyze
+verifyRelease.dependsOn dependencyCheckAnalyze
