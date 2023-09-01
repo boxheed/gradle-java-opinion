@@ -36,7 +36,7 @@ project.tasks.findAll {
 artifacts {
     archives sourcesJar
     archives javadocJar
-    tasks.named("bootJar")
+//    tasks.named("bootJar")
 }
 
 publishing {
