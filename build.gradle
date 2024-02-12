@@ -39,7 +39,7 @@ dependencies {
     runtimeOnly 'pl.allegro.tech.build:axion-release-plugin:1.16.1'
     runtimeOnly 'com.fizzpod:gradle-gitignore-plugin:3.0.7'
     runtimeOnly 'com.fizzpod:gradle-extended-info-plugin:13.0.0'
-    runtimeOnly 'com.fizzpod:gradle-pater-build-plugin:2.5.10'
+    runtimeOnly 'com.fizzpod:gradle-pater-build-plugin:2.5.11'
     runtimeOnly 'com.fizzpod:gradle-layout-plugin:4.3.8'
     runtimeOnly 'com.fizzpod:gradle-sweeney-plugin:4.6.8'
     runtimeOnly 'com.github.ben-manes:gradle-versions-plugin:0.51.0'
