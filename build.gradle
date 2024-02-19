@@ -16,7 +16,7 @@ buildscript {
         classpath 'com.gradle.enterprise:com.gradle.enterprise.gradle.plugin:3.16.2'
         classpath 'org.owasp:dependency-check-gradle:9.0.9'
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.0.7'
-        classpath 'com.fizzpod:gradle-github-release-plugin:1.0.1'
+        classpath 'com.fizzpod:gradle-github-release-plugin:1.0.2'
     }
 }
 
@@ -46,5 +46,5 @@ dependencies {
     runtimeOnly 'com.gradle.enterprise:com.gradle.enterprise.gradle.plugin:3.16.2'
     runtimeOnly 'org.owasp:dependency-check-gradle:9.0.9'
     runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.0.7'
-    runtimeOnly 'com.fizzpod:gradle-github-release-plugin:1.0.1'
+    runtimeOnly 'com.fizzpod:gradle-github-release-plugin:1.0.2'
 }
