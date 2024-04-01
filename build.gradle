@@ -14,7 +14,7 @@ buildscript {
         classpath 'com.fizzpod:gradle-sweeney-plugin:4.6.11'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.51.0'
         classpath 'com.gradle.enterprise:com.gradle.enterprise.gradle.plugin:3.16.2'
-        classpath 'org.owasp:dependency-check-gradle:9.0.10'
+        classpath 'org.owasp:dependency-check-gradle:9.1.0'
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.0.9'
         classpath 'com.fizzpod:gradle-github-release-plugin:1.0.4'
     }
@@ -44,7 +44,7 @@ dependencies {
     runtimeOnly 'com.fizzpod:gradle-sweeney-plugin:4.6.11'
     runtimeOnly 'com.github.ben-manes:gradle-versions-plugin:0.51.0'
     runtimeOnly 'com.gradle.enterprise:com.gradle.enterprise.gradle.plugin:3.16.2'
-    runtimeOnly 'org.owasp:dependency-check-gradle:9.0.10'
+    runtimeOnly 'org.owasp:dependency-check-gradle:9.1.0'
     runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.0.9'
     runtimeOnly 'com.fizzpod:gradle-github-release-plugin:1.0.4'
 }
