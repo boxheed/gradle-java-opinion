@@ -9,9 +9,14 @@ apply plugin: 'com.github.ben-manes.versions'
 apply plugin: 'com.github.spotbugs'
 
 //build scan is configured in the settings.gradle file
-buildScan {
-  termsOfServiceUrl = 'https://gradle.com/terms-of-service'    
-  termsOfServiceAgree = 'yes'                                  
+def isCI = System.getenv('CI') != null
+
+develocity {
+    buildScan {
+        termsOfUseUrl = 'https://gradle.com/help/legal-terms-of-use'    
+        termsOfUseAgree = 'yes'            
+         publishing.onlyIf { isCI }                      
+    }
 }
 
 //sourceCompatibility=1.8
@@ -19,7 +24,7 @@ buildScan {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -32,8 +37,11 @@ compileGroovy {
 }
 
 repositories {
-  mavenLocal()
-  mavenCentral()
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
 }
 
 sweeney {
@@ -47,4 +55,27 @@ spotbugs {
     showStackTraces = true
     showProgress = true
     reportsDir = file("$buildDir/spotbugs")
+}
+
+dependencyLocking {
+    lockAllConfigurations()
+}
+
+buildscript {
+    configurations.classpath {
+        resolutionStrategy.activateDependencyLocking()
+    }
+}
+
+tasks.register('resolveAndLockAll') {
+    notCompatibleWithConfigurationCache("Filters configurations at execution time")
+    doFirst {
+        assert gradle.startParameter.writeDependencyLocks : "$path must be run from the command line with the `--write-locks` flag"
+    }
+    doLast {
+        configurations.findAll {
+            // Add any custom filtering on the configurations to be resolved
+            it.canBeResolved
+        }.each { it.resolve() }
+    }
 }
