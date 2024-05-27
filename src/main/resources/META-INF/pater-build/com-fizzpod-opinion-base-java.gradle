@@ -32,8 +32,11 @@ compileGroovy {
 }
 
 repositories {
-  mavenLocal()
-  mavenCentral()
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
 }
 
 sweeney {
@@ -47,6 +50,16 @@ spotbugs {
     showStackTraces = true
     showProgress = true
     reportsDir = file("$buildDir/spotbugs")
+}
+
+dependencyLocking {
+    lockAllConfigurations()
+}
+
+buildscript {
+    configurations.classpath {
+        resolutionStrategy.activateDependencyLocking()
+    }
 }
 
 tasks.register('resolveAndLockAll') {
