@@ -9,9 +9,14 @@ apply plugin: 'com.github.ben-manes.versions'
 apply plugin: 'com.github.spotbugs'
 
 //build scan is configured in the settings.gradle file
-buildScan {
-  termsOfServiceUrl = 'https://gradle.com/terms-of-service'    
-  termsOfServiceAgree = 'yes'                                  
+def isCI = System.getenv('CI') != null
+
+develocity {
+    buildScan {
+        termsOfUseUrl = 'https://gradle.com/help/legal-terms-of-use'    
+        termsOfUseAgree = 'yes'            
+         publishing.onlyIf { isCI }                      
+    }
 }
 
 //sourceCompatibility=1.8
