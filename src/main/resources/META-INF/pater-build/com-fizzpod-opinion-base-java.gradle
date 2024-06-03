@@ -29,11 +29,11 @@ java {
 }
 
 compileJava {
-    options.release = 8
+    options.release = 17
 }
 
 compileGroovy {
-    options.release = 8
+    options.release = 17
 }
 
 repositories {
