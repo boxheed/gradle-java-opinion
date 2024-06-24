@@ -13,7 +13,7 @@ buildscript {
         classpath 'com.fizzpod:gradle-layout-plugin:4.3.19'
         classpath 'com.fizzpod:gradle-sweeney-plugin:4.6.17'
         classpath 'com.fizzpod:gradle-osv-scanner-plugin:3.0.9'
-        classpath 'com.fizzpod:gradle-github-release-plugin:1.0.10'
+        classpath 'com.fizzpod:gradle-github-release-plugin:1.0.12'
         classpath 'com.gradle:develocity-gradle-plugin:3.17.4'
         classpath 'com.gradle:common-custom-user-data-gradle-plugin:2.0.2'
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.0.15'
@@ -49,7 +49,7 @@ dependencies {
     runtimeOnly 'com.gradle:develocity-gradle-plugin:3.17.4'
     runtimeOnly 'com.fizzpod:gradle-osv-scanner-plugin:3.0.9'
     runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.0.15'
-    runtimeOnly 'com.fizzpod:gradle-github-release-plugin:1.0.10'
+    runtimeOnly 'com.fizzpod:gradle-github-release-plugin:1.0.12'
     runtimeOnly 'com.gradle:common-custom-user-data-gradle-plugin:2.0.2'
 
         constraints {
