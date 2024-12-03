@@ -7,14 +7,14 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'pl.allegro.tech.build:axion-release-plugin:1.18.14'
-        classpath 'com.fizzpod:gradle-extended-info-plugin:14.0.4'
-        classpath 'com.fizzpod:gradle-gitignore-plugin:4.0.3'
-        classpath 'com.fizzpod:gradle-layout-plugin:5.0.3'
-        classpath 'com.fizzpod:gradle-sweeney-plugin:5.0.3'
-        classpath 'com.fizzpod:gradle-osv-scanner-plugin:4.0.1'
-        classpath 'com.fizzpod:gradle-github-release-plugin:2.0.3'
-        classpath 'com.gradle:develocity-gradle-plugin:3.18.1'
+        classpath 'pl.allegro.tech.build:axion-release-plugin:1.18.16'
+        classpath 'com.fizzpod:gradle-extended-info-plugin:14.0.5'
+        classpath 'com.fizzpod:gradle-gitignore-plugin:4.0.4'
+        classpath 'com.fizzpod:gradle-layout-plugin:5.0.4'
+        classpath 'com.fizzpod:gradle-sweeney-plugin:6.0.0'
+        classpath 'com.fizzpod:gradle-osv-scanner-plugin:4.1.0'
+        classpath 'com.fizzpod:gradle-github-release-plugin:2.0.4'
+        classpath 'com.gradle:develocity-gradle-plugin:3.18.2'
         classpath 'com.gradle:common-custom-user-data-gradle-plugin:2.0.2'
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.0.26'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.51.0'
@@ -39,17 +39,17 @@ compileGroovy {
 */
 
 dependencies {
-    runtimeOnly 'pl.allegro.tech.build:axion-release-plugin:1.18.14'
-    runtimeOnly 'com.fizzpod:gradle-gitignore-plugin:4.0.3'
-    runtimeOnly 'com.fizzpod:gradle-extended-info-plugin:14.0.4'
-    runtimeOnly 'com.fizzpod:gradle-pater-build-plugin:3.0.1'
-    runtimeOnly 'com.fizzpod:gradle-layout-plugin:5.0.3'
-    runtimeOnly 'com.fizzpod:gradle-sweeney-plugin:5.0.3'
+    runtimeOnly 'pl.allegro.tech.build:axion-release-plugin:1.18.16'
+    runtimeOnly 'com.fizzpod:gradle-gitignore-plugin:4.0.4'
+    runtimeOnly 'com.fizzpod:gradle-extended-info-plugin:14.0.5'
+    runtimeOnly 'com.fizzpod:gradle-pater-build-plugin:3.0.2'
+    runtimeOnly 'com.fizzpod:gradle-layout-plugin:5.0.4'
+    runtimeOnly 'com.fizzpod:gradle-sweeney-plugin:6.0.0'
     runtimeOnly 'com.github.ben-manes:gradle-versions-plugin:0.51.0'
-    runtimeOnly 'com.gradle:develocity-gradle-plugin:3.18.1'
-    runtimeOnly 'com.fizzpod:gradle-osv-scanner-plugin:4.0.1'
+    runtimeOnly 'com.gradle:develocity-gradle-plugin:3.18.2'
+    runtimeOnly 'com.fizzpod:gradle-osv-scanner-plugin:4.1.0'
     runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.0.26'
-    runtimeOnly 'com.fizzpod:gradle-github-release-plugin:2.0.3'
+    runtimeOnly 'com.fizzpod:gradle-github-release-plugin:2.0.4'
     runtimeOnly 'com.gradle:common-custom-user-data-gradle-plugin:2.0.2'
 
         constraints {
