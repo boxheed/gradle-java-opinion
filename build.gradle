@@ -16,7 +16,7 @@ buildscript {
         classpath 'com.fizzpod:gradle-github-release-plugin:3.0.1'
         classpath 'com.gradle:develocity-gradle-plugin:4.1.1'
         classpath 'com.gradle:common-custom-user-data-gradle-plugin:2.3'
-        classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.2.6'
+        classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.3.0'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.52.0'
 
     }
@@ -48,7 +48,7 @@ dependencies {
     runtimeOnly 'com.github.ben-manes:gradle-versions-plugin:0.52.0'
     runtimeOnly 'com.gradle:develocity-gradle-plugin:4.1.1'
     runtimeOnly 'com.fizzpod:gradle-osv-scanner-plugin:5.0.0'
-    runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.2.6'
+    runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.3.0'
     runtimeOnly 'com.fizzpod:gradle-github-release-plugin:3.0.1'
     runtimeOnly 'com.gradle:common-custom-user-data-gradle-plugin:2.3'
 
