@@ -32,9 +32,8 @@ jobs:
       TERM: dumb
     steps:
       - checkout
-      - run: ./gradlew --write-locks resolveAndLockAll
       - run: ./gradlew osvInstall
-      - run: ./gradlew osvScan
+      - run: ./gradlew osvLockAndScan
 
   release:
     docker:
