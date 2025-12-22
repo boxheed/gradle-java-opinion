@@ -33,7 +33,8 @@ jobs:
     steps:
       - checkout
       - run: ./gradlew osvInstall
-      - run: ./gradlew osvLockAndScan
+      - run: ./gradlew writeLockfiles
+      - run: ./gradlew osvScan
 
   release:
     docker:
