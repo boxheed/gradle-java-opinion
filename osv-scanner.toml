@@ -15,3 +15,7 @@ reason = "Not critically affected"
 [[IgnoredVulns]]
 id = "GHSA-vc5p-v9hr-52mj"
 reason = "Awaiting release of fix from transient dependency"
+
+[[IgnoredVulns]]
+id = "GHSA-72hv-8253-57qq"
+reason = "Awaiting release of fix from transient dependency"
