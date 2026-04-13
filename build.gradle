@@ -82,6 +82,13 @@ dependencies {
             }
         }
 
+        implementation('org.apache.logging.log4j:log4j-core') {
+            because 'version 2.25.2 imported as a dependency has a vulnerability'
+            version {
+                require '2.25.4'
+            }
+        }
+
         
     }
 }
