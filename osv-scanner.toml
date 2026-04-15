@@ -11,3 +11,23 @@ reason = "Awaiting release of fix from transient dependency"
 [[IgnoredVulns]]
 id = "GHSA-j288-q9x7-2f5v"
 reason = "Not critically affected"
+
+[[IgnoredVulns]]
+id = "GHSA-vc5p-v9hr-52mj"
+reason = "Awaiting release of fix from transient dependency"
+
+[[IgnoredVulns]]
+id = "GHSA-72hv-8253-57qq"
+reason = "Awaiting release of fix from transient dependency"
+
+[[IgnoredVulns]]
+id = "GHSA-3pxv-7cmr-fjr4"
+reason = "Awaiting release of fix from transient dependency"
+
+[[IgnoredVulns]]
+id = "GHSA-445c-vh5m-36rj"
+reason = "Awaiting release of fix from transient dependency"
+
+[[IgnoredVulns]]
+id = "GHSA-6hg6-v5c8-fphq"
+reason = "Awaiting release of fix from transient dependency"
