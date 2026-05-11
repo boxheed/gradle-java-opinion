@@ -71,7 +71,13 @@ dependencies {
             version {
                 require '1.78.1'
             }
-     
+        }
+
+        implementation('org.bouncycastle:bcprov-jdk18on') {
+            because 'version 1.82 imported as a dependency has a vulnerability'
+            version {
+                require '1.84'
+            }
         }
 
         implementation('org.eclipse.jgit:org.eclipse.jgit') {
