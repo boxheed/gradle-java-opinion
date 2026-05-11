@@ -18,6 +18,29 @@ buildscript {
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.5.4'
         classpath 'com.gradle:common-custom-user-data-gradle-plugin:2.6.0'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.54.0'
+
+        constraints {
+            classpath('org.bouncycastle:bcpg-jdk18on') {
+                version {
+                    require '1.84'
+                }
+            }
+            classpath('org.bouncycastle:bcutil-jdk18on') {
+                version {
+                    require '1.84'
+                }
+            }
+            classpath('org.bouncycastle:bcpkix-jdk18on') {
+                version {
+                    require '1.84'
+                }
+            }
+            classpath('org.bouncycastle:bcprov-jdk18on') {
+                version {
+                    require '1.84'
+                }
+            }
+        }
     }
 }
 
@@ -55,23 +78,29 @@ dependencies {
         implementation('org.bouncycastle:bcpg-jdk18on') {
             because 'version 1.77 imported as a dependency has a vulnerability'
             version {
-                require '1.78.1'
+                require '1.84'
             }
         }
 
         implementation('org.bouncycastle:bcutil-jdk18on') {
             because 'version 1.77 imported as a dependency has a vulnerability'
             version {
-                require '1.78.1'
+                require '1.84'
             }
         }
 
         implementation('org.bouncycastle:bcpkix-jdk18on') {
             because 'version 1.77 imported as a dependency has a vulnerability'
             version {
-                require '1.78.1'
+                require '1.84'
             }
-     
+        }
+
+        implementation('org.bouncycastle:bcprov-jdk18on') {
+            because 'version 1.82 imported as a dependency has a vulnerability'
+            version {
+                require '1.84'
+            }
         }
 
         implementation('org.eclipse.jgit:org.eclipse.jgit') {
