@@ -9,11 +9,11 @@ buildscript {
     dependencies {
         classpath 'pl.allegro.tech.build:axion-release-plugin:1.21.1'
         classpath 'com.fizzpod:gradle-extended-info-plugin:15.0.7'
-        classpath 'com.fizzpod:gradle-gitignore-plugin:5.0.4'
-        classpath 'com.fizzpod:gradle-layout-plugin:6.1.1'
+        classpath 'com.fizzpod:gradle-gitignore-plugin:5.0.5'
+        classpath 'com.fizzpod:gradle-layout-plugin:6.2.0'
         classpath 'com.fizzpod:gradle-sweeney-plugin:7.0.6'
         classpath 'com.fizzpod:gradle-osv-scanner-plugin:6.0.0'
-        classpath 'com.fizzpod:gradle-github-release-plugin:3.2.1'
+        classpath 'com.fizzpod:gradle-github-release-plugin:3.3.0'
         classpath 'com.gradle:develocity-gradle-plugin:4.4.1'
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.5.4'
         classpath 'com.gradle:common-custom-user-data-gradle-plugin:2.6.0'
@@ -62,16 +62,16 @@ compileGroovy {
 
 dependencies {
     runtimeOnly 'pl.allegro.tech.build:axion-release-plugin:1.21.1'
-    runtimeOnly 'com.fizzpod:gradle-gitignore-plugin:5.0.4'
+    runtimeOnly 'com.fizzpod:gradle-gitignore-plugin:5.0.5'
     runtimeOnly 'com.fizzpod:gradle-extended-info-plugin:15.0.7'
     runtimeOnly 'com.fizzpod:gradle-pater-build-plugin:4.0.5'
-    runtimeOnly 'com.fizzpod:gradle-layout-plugin:6.1.1'
+    runtimeOnly 'com.fizzpod:gradle-layout-plugin:6.2.0'
     runtimeOnly 'com.fizzpod:gradle-sweeney-plugin:7.0.6'
     runtimeOnly 'com.github.ben-manes:gradle-versions-plugin:0.54.0'
     runtimeOnly 'com.gradle:develocity-gradle-plugin:4.4.1'
     runtimeOnly 'com.fizzpod:gradle-osv-scanner-plugin:6.0.0'
     runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.5.4'
-    runtimeOnly 'com.fizzpod:gradle-github-release-plugin:3.2.1'
+    runtimeOnly 'com.fizzpod:gradle-github-release-plugin:3.3.0'
     runtimeOnly 'com.gradle:common-custom-user-data-gradle-plugin:2.6.0'
 
     constraints {
@@ -91,6 +91,13 @@ dependencies {
 
         implementation('org.bouncycastle:bcpkix-jdk18on') {
             because 'version 1.77 imported as a dependency has a vulnerability'
+            version {
+                require '1.84'
+            }
+        }
+
+        implementation('org.bouncycastle:bcprov-jdk18on') {
+            because 'version 1.82 imported as a dependency has a vulnerability'
             version {
                 require '1.84'
             }
