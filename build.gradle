@@ -7,17 +7,17 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'pl.allegro.tech.build:axion-release-plugin:1.21.1'
-        classpath 'com.fizzpod:gradle-extended-info-plugin:15.0.6'
-        classpath 'com.fizzpod:gradle-gitignore-plugin:5.0.3'
-        classpath 'com.fizzpod:gradle-layout-plugin:6.1.0'
-        classpath 'com.fizzpod:gradle-sweeney-plugin:7.0.5'
-        classpath 'com.fizzpod:gradle-osv-scanner-plugin:5.0.6'
-        classpath 'com.fizzpod:gradle-github-release-plugin:3.2.0'
-        classpath 'com.gradle:develocity-gradle-plugin:4.4.0'
-        classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.5.0'
+        classpath 'pl.allegro.tech.build:axion-release-plugin:1.21.2'
+        classpath 'com.fizzpod:gradle-extended-info-plugin:16.0.1'
+        classpath 'com.fizzpod:gradle-gitignore-plugin:5.0.6'
+        classpath 'com.fizzpod:gradle-layout-plugin:6.2.1'
+        classpath 'com.fizzpod:gradle-sweeney-plugin:7.0.6'
+        classpath 'com.fizzpod:gradle-osv-scanner-plugin:6.2.1'
+        classpath 'com.fizzpod:gradle-github-release-plugin:4.0.0'
+        classpath 'com.gradle:develocity-gradle-plugin:4.5.0'
+        classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.5.8'
         classpath 'com.gradle:common-custom-user-data-gradle-plugin:2.6.0'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.53.0'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.54.0'
     }
 }
 
@@ -38,17 +38,17 @@ compileGroovy {
 */
 
 dependencies {
-    runtimeOnly 'pl.allegro.tech.build:axion-release-plugin:1.21.1'
-    runtimeOnly 'com.fizzpod:gradle-gitignore-plugin:5.0.3'
-    runtimeOnly 'com.fizzpod:gradle-extended-info-plugin:15.0.6'
-    runtimeOnly 'com.fizzpod:gradle-pater-build-plugin:4.0.4'
-    runtimeOnly 'com.fizzpod:gradle-layout-plugin:6.1.0'
-    runtimeOnly 'com.fizzpod:gradle-sweeney-plugin:7.0.5'
-    runtimeOnly 'com.github.ben-manes:gradle-versions-plugin:0.53.0'
-    runtimeOnly 'com.gradle:develocity-gradle-plugin:4.4.0'
-    runtimeOnly 'com.fizzpod:gradle-osv-scanner-plugin:5.0.6'
-    runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.5.0'
-    runtimeOnly 'com.fizzpod:gradle-github-release-plugin:3.2.0'
+    runtimeOnly 'pl.allegro.tech.build:axion-release-plugin:1.21.2'
+    runtimeOnly 'com.fizzpod:gradle-gitignore-plugin:5.0.6'
+    runtimeOnly 'com.fizzpod:gradle-extended-info-plugin:16.0.1'
+    runtimeOnly 'com.fizzpod:gradle-pater-build-plugin:4.0.6'
+    runtimeOnly 'com.fizzpod:gradle-layout-plugin:6.2.1'
+    runtimeOnly 'com.fizzpod:gradle-sweeney-plugin:7.0.6'
+    runtimeOnly 'com.github.ben-manes:gradle-versions-plugin:0.54.0'
+    runtimeOnly 'com.gradle:develocity-gradle-plugin:4.5.0'
+    runtimeOnly 'com.fizzpod:gradle-osv-scanner-plugin:6.2.1'
+    runtimeOnly 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.5.8'
+    runtimeOnly 'com.fizzpod:gradle-github-release-plugin:4.0.0'
     runtimeOnly 'com.gradle:common-custom-user-data-gradle-plugin:2.6.0'
 
     constraints {
@@ -71,7 +71,13 @@ dependencies {
             version {
                 require '1.78.1'
             }
-     
+        }
+
+        implementation('org.bouncycastle:bcprov-jdk18on') {
+            because 'version 1.82 imported as a dependency has a vulnerability'
+            version {
+                require '1.84'
+            }
         }
 
         implementation('org.eclipse.jgit:org.eclipse.jgit') {
@@ -88,6 +94,11 @@ dependencies {
             }
         }
 
-        
+        implementation('com.fasterxml.jackson.core:jackson-databind') {
+            because 'version 2.21.1 imported as a dependency has vulnerabilities'
+            version {
+                require '2.21.4'
+            }
+        }
     }
 }
