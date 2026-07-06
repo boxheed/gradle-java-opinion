@@ -21,3 +21,8 @@ reason = "Awaiting release of fix from transient dependency"
 [[IgnoredVulns]]
 id = "GHSA-wg6q-6289-32hp"
 reason = "Awaiting release of fix from transient dependency"
+
+[[IgnoredVulns]]
+id = "GHSA-5jmj-h7xm-6q6v"
+reason = "Awaiting release of fix from transient dependency"
+

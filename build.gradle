@@ -94,6 +94,11 @@ dependencies {
             }
         }
 
-        
+        implementation('com.fasterxml.jackson.core:jackson-databind') {
+            because 'version 2.21.1 imported as a dependency has vulnerabilities'
+            version {
+                require '2.21.4'
+            }
+        }
     }
 }
